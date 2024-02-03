@@ -1,0 +1,15 @@
+<h2 class="bg-danger text-center p-3" *ngIf="errMessage">{{errMessage}}</h2>
+
+<section class="my-4" *ngIf="catsgoryData">
+    <h2 *ngIf="!errMessage" class="text-main pb-3 fw-bolder fs-2 text-center ">All Categories</h2>
+
+    <div class="row g-4 justify-content-center">
+        <div *ngFor="let category of catsgoryData" class="col-sm-6 col-md-4 col-lg-3">
+            <div [routerLink]="['/categoriesdetails',category._id]" role="button" class=" border border-success rounded p-2 shadow">
+                <img height="270" class="w-100" [src]="category.image" [alt]="category.name">
+                <h3 class="text-main text-center">{{category.name}}</h3>
+            </div>
+
+        </div>
+    </div>
+</section>
